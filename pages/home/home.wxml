@@ -1,0 +1,170 @@
+<!--pages/home/home.wxml-->
+<view class="home">
+  <view class='header'>
+    <image class='logo' src='../../static/images/logo.png'/>
+    <view class='nabar'>
+      <view class='user'>
+        <view class="iconfont icon-user"></view>
+        <view class="user-title">我的</view>
+      </view>
+      <view class='nav'>
+        <view class="iconfont icon-nav"></view>
+        <view class="nav-title">导航</view>
+      </view>
+    </view>
+  </view>
+  <view class="banner">
+    <swiper indicator-dots="{{indicatorDots}}"
+      autoplay="{{autoplay}}" 
+      interval="{{interval}}"
+      duration="{{duration}}"
+      circular="{{circular}}">
+      <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image-banner"/>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="content">
+    <view class="list">
+      <view class="chooseItem" wx:for="{{list}}" wx:key="{{index}}">
+        <view class="icon {{item.icon}}" style="background:{{item.color}};"></view>
+        <view class="title">{{item.title}}</view>
+      </view>
+    </view>
+    <view class="decorate">
+      <view class="header-decorate">
+        <view class="head-line"></view>
+        <view class="decorate-title">全屋装修</view>
+        <view class="decorate-msg">包设计、包主材、包水电、包施工</view>
+      </view>
+      <view class="plan">
+        <swiper indicator-dots="{{indicatorDots}}"
+          autoplay="{{autoplay}}" 
+          interval="{{interval}}"
+          duration="{{duration}}"
+          circular="{{circular}}">
+          <block wx:for="{{plan}}" wx:key="{{index}}">
+            <swiper-item>
+              <image src="{{item.img}}" class="slide-image-plan"/>
+            </swiper-item>
+          </block>         
+        </swiper>
+      </view>
+      <view class="objective">
+        <view class="objective-item">
+          <view class="iconfont icon-zero"></view>
+          <view class="item-info">0增项，标准施工</view>
+        </view>
+        <view class="objective-item">
+          <view class="iconfont icon-protection-fill"></view>
+          <view class="item-info">杜绝项目外包</view>
+        </view>
+        <view class="objective-item">
+          <view class="iconfont icon-price"></view>
+          <view class="item-info">装修贷款</view>
+        </view>
+      </view>
+    </view>
+    <view class="appointment">
+      <view class="header-appointment">
+        <view class="head-line"></view>
+        <view class="appointment-title">装修预约</view>
+        <view class="appointment-msg">免费上门量房，设计方案满意为止</view>
+      </view>
+      <view class="appointment-form">
+        <form action="">
+          <input type="text" placeholder=" 小区名"/>
+          <input type="text" placeholder=" 手机号"/>
+          <input type="text" placeholder=" 建筑面积"/>
+          <button class="appointment-btn">立即申请</button>
+        </form>
+      </view>
+    </view>
+    <view class="designer">
+      <view class="header-designer">
+        <view class="head-line"></view>
+        <view class="designer-title">设计师</view>
+      </view>
+      <view class="designer-list">
+        <view class="designer-item" wx:for="{{designer}}" wx:key="{{item.id}}">
+          <image class="designer-pic" src="{{item.img}}" />
+          <view class="designer-name">{{item.name}}</view>
+          <button class="designer-btn">{{item.level_name}}</button>
+        </view>
+      </view>
+      <view class="designer-update">
+        <button class="update-btn">
+          换一换
+          <i class="iconfont icon-change"></i>
+        </button>
+        <button class="update-btn">
+          更多设计师
+          <i class="iconfont icon-more"></i>
+        </button>
+      </view>
+    </view>
+    <view class="rendering">
+      <view class="header-rendering">
+        <view class="head-line"></view>
+        <view class="rendering-title">效果图</view>
+      </view>
+      <view class="render-pic">
+        <view class="render-full">
+          <image class="full-width-pic" src="http://img.sirfang.com/effect_img/2019/06/18/882c51d1f8a74963228db7eb713ade8d.jpg" />
+          <view class="full-width-title">品质的家</view>
+        </view>
+        <view class="render-half-list">
+          <view class="render-half">
+            <image class="half-width-pic" src="http://img.sirfang.com/effect_img/2019/06/18/e45759010b8597ec95c8f7cd5a568e2b.jpg" />
+            <view class="half-width-title">品质的家</view>
+          </view>
+          <view class="render-half">
+            <image class="half-width-pic" src="http://img.sirfang.com/effect_img/2019/06/18/e45759010b8597ec95c8f7cd5a568e2b.jpg" />
+            <view class="half-width-title">品质的家</view>
+          </view>
+          <view class="render-half">
+            <image class="half-width-pic" src="http://img.sirfang.com/effect_img/2019/06/18/e45759010b8597ec95c8f7cd5a568e2b.jpg" />
+            <view class="half-width-title">品质的家</view>
+          </view>
+          <view class="render-half">
+            <image class="half-width-pic" src="http://img.sirfang.com/effect_img/2019/06/18/e45759010b8597ec95c8f7cd5a568e2b.jpg" />
+            <view class="half-width-title">品质的家</view>
+          </view>
+        </view>
+        <view class="render-update">
+          <button class="update-btn">
+            换一换
+            <i class="iconfont icon-change"></i>
+          </button>
+          <button class="update-btn">
+            更多效果图
+            <i class="iconfont icon-more"></i>
+          </button>
+        </view>
+      </view>
+      <view class="live">
+        <view class="header-live">
+          <view class="head-line"></view>
+          <view class="live-title">工地直播</view>
+        </view>
+        <view class="live-msg">
+          <image class="live-pic" src="http://img.sirfang.com/effect_img/2019/06/18/882c51d1f8a74963228db7eb713ade8d.jpg" />
+          <view class="live-title">品质的家</view>
+        </view>
+        <view class="live-update">
+          <button class="update-btn">
+            换一换
+            <i class="iconfont icon-change"></i>
+          </button>
+          <button class="update-btn">
+            更多工地直播
+            <i class="iconfont icon-more"></i>
+          </button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
